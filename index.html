@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Dreamy LowPoly Assets</title>
+<meta name="description" content="Stylized low-poly environment packs for Unity.">
+<link rel="icon" type="image/png" href="img/favicon.png">
+<meta property="og:title" content="Dreamy LowPoly Assets">
+<meta property="og:description" content="Stylized low-poly environment packs for Unity.">
+<meta property="og:image" content="img/hero.jpg">
+<style>
+  :root {
+    --bg: #fbfaf7;
+    --fg: #1f2320;
+    --muted: #6b716c;
+    --line: #e6e3dc;
+    --accent: #c9563b;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root { --bg: #15171a; --fg: #ecebe6; --muted: #9aa09b; --line: #2a2e33; --accent: #e8765b; }
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; background: var(--bg); color: var(--fg);
+    font: 17px/1.6 -apple-system, "Segoe UI", Inter, Helvetica, Arial, sans-serif;
+  }
+  a { color: var(--accent); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  .wrap { max-width: 1040px; margin: 0 auto; padding: 0 20px; }
+  header { padding: 28px 0 20px; display: flex; align-items: center; justify-content: space-between; gap: 16px; }
+  header .brand { font-weight: 700; font-size: 19px; letter-spacing: .01em; color: var(--fg); }
+  header nav a { color: var(--muted); margin-left: 20px; font-size: 15px; }
+  .hero img { width: 100%; height: auto; display: block; border-radius: 12px; }
+  h1 { font-size: 34px; line-height: 1.2; margin: 36px 0 10px; }
+  h2 { font-size: 22px; margin: 48px 0 12px; }
+  p.lead { font-size: 19px; color: var(--muted); margin: 0 0 20px; max-width: 720px; }
+  .cta { display: inline-block; background: var(--accent); color: #fff; padding: 11px 20px; border-radius: 8px; font-weight: 600; }
+  .cta:hover { text-decoration: none; filter: brightness(1.08); }
+  .grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; }
+  .grid img { width: 100%; height: auto; display: block; border-radius: 10px; }
+  @media (max-width: 640px) { .grid { grid-template-columns: 1fr; } h1 { font-size: 28px; } }
+  ul.features { padding-left: 20px; margin: 0; max-width: 760px; }
+  ul.features li { margin: 6px 0; }
+  footer { margin-top: 64px; padding: 24px 0 40px; border-top: 1px solid var(--line); color: var(--muted); font-size: 15px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header>
+    <span class="brand">Dreamy LowPoly Assets</span>
+    <nav>
+      <a href="#packs">Packs</a>
+      <a href="#support">Support</a>
+    </nav>
+  </header>
+
+  <div class="hero">
+    <img src="img/hero.jpg" alt="Floating islands with a shipwreck, village and bonfire under a blue sky">
+  </div>
+
+  <h1>Stylized environment packs for Unity</h1>
+  <p class="lead">
+    Hand-crafted low-poly worlds that drop straight into your project: modular kits, ready-made scenes,
+    and the tools to make them yours. Built for URP, with Built-in and HDRP versions included.
+  </p>
+
+  <h2 id="packs">Floating Islands</h2>
+  <p>
+    Nine floating islands with a sky village, a ruined temple, hunter camps, a shipwreck and a bonfire.
+    256 prefabs, modular house and temple kits, Shader Graph materials, and a GPU-instanced grass system
+    that scatters hundreds of thousands of blades at little CPU cost.
+  </p>
+  <p><a class="cta" href="#">View on the Unity Asset Store</a></p>
+
+  <div class="grid">
+    <img src="img/temple.jpg" alt="Ruined temple with an obelisk on a floating island, village behind it">
+    <img src="img/village.jpg" alt="Thatched village houses, rugs and a bonfire">
+    <img src="img/shipwreck.jpg" alt="Shipwreck resting on an island among trees">
+    <img src="img/bridge.jpg" alt="Bird statue and rope bridge between islands">
+    <img src="img/totem.jpg" alt="Painted totem poles with a bird nest and a zipline basket">
+    <img src="img/prefabs.jpg" alt="Camp towers and ladders laid out in the prefab showcase scene">
+  </div>
+
+  <h2>What's inside</h2>
+  <ul class="features">
+    <li>9 islands, each as a bare rock and a fully dressed version</li>
+    <li>Modular kits for thatched houses, stone temple ruins and camps</li>
+    <li>Props, foliage, trees, shipwreck, fire, fog and water FX</li>
+    <li>Custom Shader Graphs: vertex color, triplanar projection, world-space color ramps, water with foam and refraction</li>
+    <li>GrassRenderer: GPU-instanced grass with raycast placement, exclusion objects and an in-editor eraser brush</li>
+    <li>Two demo scenes with baked lighting</li>
+    <li>Unity 2022.3 LTS or newer. URP out of the box, Built-in and HDRP packages included</li>
+  </ul>
+
+  <h2 id="support">Support</h2>
+  <p>
+    Questions, bug reports or feature requests: <a href="mailto:support@example.com">support@example.com</a>.
+    Documentation ships with every pack as a README in Markdown and PDF.
+  </p>
+
+  <footer>
+    &copy; 2026 Dreamy LowPoly Assets
+  </footer>
+
+</div>
+</body>
+</html>
