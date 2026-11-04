@@ -4,106 +4,185 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Dreamy LowPoly Assets</title>
-<meta name="description" content="Stylized low-poly environment packs for Unity.">
+<meta name="description" content="Stylized low-poly worlds for Unity. Drop them in, make them yours.">
 <link rel="icon" type="image/png" href="img/favicon.png">
 <meta property="og:title" content="Dreamy LowPoly Assets">
-<meta property="og:description" content="Stylized low-poly environment packs for Unity.">
+<meta property="og:description" content="Stylized low-poly worlds for Unity. Drop them in, make them yours.">
 <meta property="og:image" content="img/hero.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
 <style>
   :root {
-    --bg: #fbfaf7;
-    --fg: #1f2320;
-    --muted: #6b716c;
-    --line: #e6e3dc;
-    --accent: #c9563b;
-  }
-  @media (prefers-color-scheme: dark) {
-    :root { --bg: #15171a; --fg: #ecebe6; --muted: #9aa09b; --line: #2a2e33; --accent: #e8765b; }
+    --sky: #8fd0f5;
+    --sky-deep: #4aa9e0;
+    --grass: #6cc24a;
+    --grass-deep: #3e9a3a;
+    --rock: #c75a3b;
+    --sand: #f3d9a4;
+    --cream: #fff8ea;
+    --ink: #2b2a33;
+    --muted: #6d6a78;
+    --card: #ffffff;
+    --line: #efe3cc;
   }
   * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
   body {
-    margin: 0; background: var(--bg); color: var(--fg);
-    font: 17px/1.6 -apple-system, "Segoe UI", Inter, Helvetica, Arial, sans-serif;
+    margin: 0; color: var(--ink); background: var(--cream);
+    font: 17px/1.65 "Nunito", -apple-system, "Segoe UI", sans-serif;
   }
-  a { color: var(--accent); text-decoration: none; }
-  a:hover { text-decoration: underline; }
-  .wrap { max-width: 1040px; margin: 0 auto; padding: 0 20px; }
-  header { padding: 28px 0 20px; display: flex; align-items: center; justify-content: space-between; gap: 16px; }
-  header .brand { font-weight: 700; font-size: 19px; letter-spacing: .01em; color: var(--fg); }
-  header nav a { color: var(--muted); margin-left: 20px; font-size: 15px; }
-  .hero img { width: 100%; height: auto; display: block; border-radius: 12px; }
-  h1 { font-size: 34px; line-height: 1.2; margin: 36px 0 10px; }
-  h2 { font-size: 22px; margin: 48px 0 12px; }
-  p.lead { font-size: 19px; color: var(--muted); margin: 0 0 20px; max-width: 720px; }
-  .cta { display: inline-block; background: var(--accent); color: #fff; padding: 11px 20px; border-radius: 8px; font-weight: 600; }
-  .cta:hover { text-decoration: none; filter: brightness(1.08); }
-  .grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; }
-  .grid img { width: 100%; height: auto; display: block; border-radius: 10px; }
-  @media (max-width: 640px) { .grid { grid-template-columns: 1fr; } h1 { font-size: 28px; } }
-  ul.features { padding-left: 20px; margin: 0; max-width: 760px; }
-  ul.features li { margin: 6px 0; }
-  footer { margin-top: 64px; padding: 24px 0 40px; border-top: 1px solid var(--line); color: var(--muted); font-size: 15px; }
+  h1, h2, h3, .brand, .cta, .pill { font-family: "Fredoka", "Nunito", sans-serif; }
+  a { color: var(--sky-deep); text-decoration: none; }
+  .wrap { max-width: 1100px; margin: 0 auto; padding: 0 22px; }
+
+  /* Header */
+  header { position: absolute; top: 0; left: 0; right: 0; z-index: 2; }
+  header .wrap { display: flex; align-items: center; justify-content: space-between; padding-top: 22px; }
+  .brand { display: flex; align-items: center; gap: 10px; color: #fff; font-weight: 600; font-size: 21px; text-shadow: 0 2px 10px rgba(0,0,0,.35); }
+  .brand img { width: 40px; height: 40px; border-radius: 50%; border: 3px solid #fff; box-shadow: 0 2px 10px rgba(0,0,0,.25); }
+  nav a { color: #fff; font-weight: 700; margin-left: 22px; text-shadow: 0 1px 8px rgba(0,0,0,.4); }
+  nav a:hover { text-decoration: underline; }
+
+  /* Hero */
+  .hero {
+    position: relative; min-height: 78vh; display: flex; align-items: flex-end;
+    background: url(img/hero.jpg) center 40% / cover no-repeat;
+    border-radius: 0 0 48px 48px; overflow: hidden;
+  }
+  .hero::after {
+    content: ""; position: absolute; inset: 0;
+    background: linear-gradient(180deg, rgba(20,40,70,.25) 0%, rgba(20,40,70,0) 35%, rgba(20,30,50,.72) 100%);
+  }
+  .hero .wrap { position: relative; z-index: 1; padding-bottom: 64px; padding-top: 140px; color: #fff; }
+  .pill { display: inline-block; background: var(--grass); color: #fff; font-weight: 600; font-size: 14px; letter-spacing: .04em; padding: 5px 14px; border-radius: 999px; margin-bottom: 14px; }
+  h1 { font-size: clamp(36px, 6vw, 64px); line-height: 1.05; margin: 0 0 14px; font-weight: 700; text-shadow: 0 3px 18px rgba(0,0,0,.35); }
+  .hero p { font-size: clamp(18px, 2.2vw, 22px); max-width: 620px; margin: 0 0 26px; text-shadow: 0 2px 12px rgba(0,0,0,.45); }
+  .cta {
+    display: inline-block; background: var(--rock); color: #fff; font-weight: 600; font-size: 18px;
+    padding: 14px 26px; border-radius: 14px; box-shadow: 0 6px 0 #9c4029, 0 10px 24px rgba(0,0,0,.25);
+    transition: transform .12s, box-shadow .12s;
+  }
+  .cta:hover { transform: translateY(2px); box-shadow: 0 4px 0 #9c4029, 0 8px 18px rgba(0,0,0,.25); }
+  .cta.soft { background: #fff; color: var(--rock); box-shadow: 0 6px 0 #e6d2b0, 0 10px 24px rgba(0,0,0,.08); margin-left: 10px; }
+  .cta.soft:hover { box-shadow: 0 4px 0 #e6d2b0, 0 8px 18px rgba(0,0,0,.08); }
+
+  /* Sections */
+  section { padding: 72px 0 0; }
+  .eyebrow { color: var(--grass-deep); font-weight: 700; letter-spacing: .08em; text-transform: uppercase; font-size: 13px; margin: 0 0 6px; }
+  h2 { font-size: clamp(28px, 4vw, 40px); margin: 0 0 12px; font-weight: 600; }
+  .lead { font-size: 19px; color: var(--muted); max-width: 680px; margin: 0 0 28px; }
+
+  /* Pack card */
+  .pack { background: var(--card); border-radius: 28px; padding: 36px; box-shadow: 0 20px 60px rgba(120,80,30,.12); border: 1px solid var(--line); }
+  .pack-head { display: flex; gap: 28px; align-items: center; flex-wrap: wrap; margin-bottom: 26px; }
+  .pack-head img { width: 112px; height: 112px; border-radius: 24px; box-shadow: 0 8px 20px rgba(0,0,0,.15); }
+  .pack-head h2 { margin: 0 0 4px; }
+  .pack-head p { margin: 0; color: var(--muted); max-width: 620px; }
+  .gallery { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+  .gallery img { width: 100%; height: 100%; aspect-ratio: 16/9; object-fit: cover; display: block; border-radius: 16px; transition: transform .2s; }
+  .gallery img:hover { transform: scale(1.025); }
+  .gallery img.wide { grid-column: span 2; }
+
+  /* Highlights */
+  .cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+  .card { background: var(--card); border: 1px solid var(--line); border-radius: 22px; padding: 26px; box-shadow: 0 10px 30px rgba(120,80,30,.08); }
+  .card .ico { width: 54px; height: 54px; border-radius: 16px; display: grid; place-items: center; font-size: 26px; margin-bottom: 14px; }
+  .ico.a { background: #e3f3ff; } .ico.b { background: #e4f7dc; } .ico.c { background: #fde9df; }
+  .ico.d { background: #fff3cf; } .ico.e { background: #eee9ff; } .ico.f { background: #ffe7ee; }
+  .card h3 { margin: 0 0 6px; font-size: 20px; font-weight: 600; }
+  .card p { margin: 0; color: var(--muted); font-size: 16px; }
+
+  /* Support */
+  .support { background: linear-gradient(135deg, var(--sky) 0%, var(--sky-deep) 100%); color: #fff; border-radius: 28px; padding: 44px 36px; text-align: center; }
+  .support h2 { color: #fff; }
+  .support p { max-width: 560px; margin: 0 auto 20px; font-size: 18px; }
+  .support .cta { background: #fff; color: var(--sky-deep); box-shadow: 0 6px 0 rgba(0,0,0,.15); }
+
+  footer { padding: 44px 0 48px; text-align: center; color: var(--muted); font-size: 15px; }
+
+  @media (max-width: 760px) {
+    .gallery { grid-template-columns: 1fr 1fr; } .gallery img.wide { grid-column: span 2; }
+    .cards { grid-template-columns: 1fr; }
+    .pack { padding: 24px; border-radius: 22px; }
+    .hero { min-height: 70vh; border-radius: 0 0 28px 28px; }
+    nav { display: none; }
+    .cta.soft { margin-left: 0; margin-top: 10px; }
+  }
 </style>
 </head>
 <body>
-<div class="wrap">
 
-  <header>
-    <span class="brand">Dreamy LowPoly Assets</span>
+<header>
+  <div class="wrap">
+    <a class="brand" href="#"><img src="img/favicon.png" alt="">Dreamy LowPoly Assets</a>
     <nav>
       <a href="#packs">Packs</a>
+      <a href="#why">Why us</a>
       <a href="#support">Support</a>
     </nav>
-  </header>
-
-  <div class="hero">
-    <img src="img/hero.jpg" alt="Floating islands with a shipwreck, village and bonfire under a blue sky">
   </div>
+</header>
 
-  <h1>Stylized environment packs for Unity</h1>
-  <p class="lead">
-    Hand-crafted low-poly worlds that drop straight into your project: modular kits, ready-made scenes,
-    and the tools to make them yours. Built for URP, with Built-in and HDRP versions included.
-  </p>
-
-  <h2 id="packs">Floating Islands</h2>
-  <p>
-    Nine floating islands with a sky village, a ruined temple, hunter camps, a shipwreck and a bonfire.
-    256 prefabs, modular house and temple kits, Shader Graph materials, and a GPU-instanced grass system
-    that scatters hundreds of thousands of blades at little CPU cost.
-  </p>
-  <p><a class="cta" href="#">View on the Unity Asset Store</a></p>
-
-  <div class="grid">
-    <img src="img/temple.jpg" alt="Ruined temple with an obelisk on a floating island, village behind it">
-    <img src="img/village.jpg" alt="Thatched village houses, rugs and a bonfire">
-    <img src="img/shipwreck.jpg" alt="Shipwreck resting on an island among trees">
-    <img src="img/bridge.jpg" alt="Bird statue and rope bridge between islands">
-    <img src="img/totem.jpg" alt="Painted totem poles with a bird nest and a zipline basket">
-    <img src="img/prefabs.jpg" alt="Camp towers and ladders laid out in the prefab showcase scene">
+<div class="hero">
+  <div class="wrap">
+    <span class="pill">Made for Unity</span>
+    <h1>Dreamy worlds,<br>ready to explore.</h1>
+    <p>Stylized low-poly environments with a hand-painted feel. Drop them into your project and start building your own adventure.</p>
+    <a class="cta" href="#packs">See the packs</a>
+    <a class="cta soft" href="#support">Get in touch</a>
   </div>
-
-  <h2>What's inside</h2>
-  <ul class="features">
-    <li>9 islands, each as a bare rock and a fully dressed version</li>
-    <li>Modular kits for thatched houses, stone temple ruins and camps</li>
-    <li>Props, foliage, trees, shipwreck, fire, fog and water FX</li>
-    <li>Custom Shader Graphs: vertex color, triplanar projection, world-space color ramps, water with foam and refraction</li>
-    <li>GrassRenderer: GPU-instanced grass with raycast placement, exclusion objects and an in-editor eraser brush</li>
-    <li>Two demo scenes with baked lighting</li>
-    <li>Unity 2022.3 LTS or newer. URP out of the box, Built-in and HDRP packages included</li>
-  </ul>
-
-  <h2 id="support">Support</h2>
-  <p>
-    Questions, bug reports or feature requests: <a href="mailto:support@example.com">support@example.com</a>.
-    Documentation ships with every pack as a README in Markdown and PDF.
-  </p>
-
-  <footer>
-    &copy; 2026 Dreamy LowPoly Assets
-  </footer>
-
 </div>
+
+<section id="packs">
+  <div class="wrap">
+    <p class="eyebrow">Our packs</p>
+    <div class="pack">
+      <div class="pack-head">
+        <img src="img/favicon.png" alt="Floating Islands icon">
+        <div>
+          <h2>Floating Islands</h2>
+          <p>A sky village, a vine-covered temple, hunter camps and a shipwreck, spread across nine floating islands. Use it as a whole world or pick it apart and build your own.</p>
+        </div>
+      </div>
+      <div class="gallery">
+        <img class="wide" src="img/temple.jpg" alt="Ruined temple with an obelisk on a floating island">
+        <img src="img/bridge.jpg" alt="Bird statue and rope bridge between islands">
+        <img src="img/village.jpg" alt="Thatched village houses and a bonfire">
+        <img src="img/totem.jpg" alt="Painted totem poles with a bird nest">
+        <img src="img/shipwreck.jpg" alt="Shipwreck resting on an island among trees">
+      </div>
+      <p style="margin:26px 0 0"><a class="cta" href="#">View on the Unity Asset Store</a></p>
+    </div>
+  </div>
+</section>
+
+<section id="why">
+  <div class="wrap">
+    <p class="eyebrow">Why you'll love it</p>
+    <h2>Pretty out of the box. Yours in minutes.</h2>
+    <p class="lead">Everything is built to be placed, moved and recolored without fuss, so you can spend your time on the game, not the scenery.</p>
+    <div class="cards">
+      <div class="card"><div class="ico a">🏝️</div><h3>Ready-made islands</h3><p>Each island comes bare and fully dressed. Start from a finished scene or an empty rock.</p></div>
+      <div class="card"><div class="ico b">🧱</div><h3>Modular kits</h3><p>Walls, roofs, stairs, columns and props that snap together into houses, temples and camps.</p></div>
+      <div class="card"><div class="ico c">🌾</div><h3>Lush grass</h3><p>Paint grass onto any surface with a brush, and let the GPU draw hundreds of thousands of blades.</p></div>
+      <div class="card"><div class="ico d">🎨</div><h3>Easy to restyle</h3><p>Tweak a few colors on the shaders to match your palette. No texture repainting needed.</p></div>
+      <div class="card"><div class="ico e">⚙️</div><h3>Any pipeline</h3><p>Works with URP out of the box. Built-in and HDRP versions are included in the pack.</p></div>
+      <div class="card"><div class="ico f">📘</div><h3>Clear docs</h3><p>A short, friendly guide gets you from import to your first island in a few minutes.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="support">
+  <div class="wrap">
+    <div class="support">
+      <h2>Need a hand?</h2>
+      <p>Questions, bug reports or ideas for the next pack are always welcome. We usually reply within a day or two.</p>
+      <a class="cta" href="mailto:stellastudiome@gmail.com">stellastudiome@gmail.com</a>
+    </div>
+  </div>
+</section>
+
+<footer>&copy; 2026 Dreamy LowPoly Assets</footer>
+
 </body>
 </html>
